@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Enterprise Application Portal</title>
+
+<style>
+:root {
+  --gov-blue: #002868;
+  --gov-red: #bf0a30;
+  --dark-bg: #0b0f19;
+  --panel: #141a2a;
+  --text: #f1f5f9;
+  --muted: #9ca3af;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background: var(--dark-bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.banner {
+  background: var(--gov-red);
+  color: white;
+  text-align: center;
+  padding: 6px 0;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+
+.notice {
+  background: var(--gov-blue);
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.container {
+  flex: 1;
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.sso-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sso-button {
+  background: var(--gov-blue);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.sso-button:hover {
+  background: #003b8f;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--panel);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid #1f2937;
+  transition: transform 0.2s ease, border 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gov-red);
+}
+
+.card h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.card p {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.75rem;
+  background: #0d1321;
+  color: var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<div class="banner"> </div>
+
+<div class="notice">
+  This information system is for offical ise only. Unauthorized use is prohibited and subject to monitoring.
+</div>
+
+<div class="container">
+
+  <h1>Enterprise Application Portal</h1>
+
+  <div class="sso-section">
+    <button class="sso-button">Login with SSO</button>
+  </div>
+
+  <div class="grid">
+
+    <a href="https://worldmonitor.app/" class="card">
+      <h2>global intelligence dashboard</h2>
+      <p> Real-time news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface.</p>
+    </a>
+
+    <a href="https://yourapp2.com" class="card">
+      <h2>Identity Management</h2>
+      <p>User provisioning and access control.</p>
+    </a>
+
+    <a href="https://yourapp3.com" class="card">
+      <h2>Analytics Platform</h2>
+      <p>Enterprise reporting and data intelligence.</p>
+    </a>
+
+    <a href="https://yourapp4.com" class="card">
+      <h2>Admin Console</h2>
+      <p>System configuration and governance tools.</p>
+    </a>
+
+  </div>
+</div>
+
+<div class="banner">CUI//SP-EXPT//PROPIN//AIUO</div>
+
+
+</body>
+</html>
