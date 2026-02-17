@@ -3,145 +3,203 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Login</title>
+<title>Secure Access Portal</title>
 
 <style>
 :root {
-  --gov-blue: #002868;
-  --gov-red: #bf0a30;
-  --dark-bg: #0b0f19;
-  --panel: #141a2a;
-  --text: #f1f5f9;
-  --muted: #9ca3af;
+  --navy: #0f172a;
+  --blue: #1d4ed8;
+  --light-blue: #2563eb;
+  --border: #e5e7eb;
+  --text: #111827;
+  --muted: #6b7280;
+  --bg: #f3f4f6;
 }
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Segoe UI", Roboto, sans-serif;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 body {
-  background: var(--dark-bg);
+  margin: 0;
+  background: var(--bg);
   color: var(--text);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
 }
 
-.banner {
-  background: var(--gov-red);
+.top-bar {
+  background: var(--navy);
   color: white;
-  text-align: center;
-  padding: 6px 0;
-  font-weight: 700;
-  letter-spacing: 2px;
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar span {
+  opacity: 0.85;
+}
+
+.header {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  padding: 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.header p {
+  margin: 4px 0 0;
   font-size: 0.9rem;
-  width: 100%;
-  position: fixed;
-  top: 0;
-}
-
-.notice {
-  background: var(--gov-blue);
-  padding: 1rem;
-  text-align: center;
-  font-size: 0.85rem;
-  width: 100%;
-  position: fixed;
-  top: 30px;
-}
-
-.login-container {
-  margin-top: 120px; /* push below banners */
-  background: var(--panel);
-  padding: 2rem;
-  border-radius: 8px;
-  max-width: 400px;
-  width: 100%;
-  text-align: center;
-  border: 1px solid #1f2937;
-}
-
-.login-container h1 {
-  margin-bottom: 1.5rem;
-}
-
-.input-group {
-  margin-bottom: 1rem;
-  text-align: left;
-}
-
-.input-group label {
-  display: block;
-  margin-bottom: 0.25rem;
-  font-size: 0.85rem;
   color: var(--muted);
 }
 
-.input-group input {
-  width: 100%;
-  padding: 0.5rem;
-  border-radius: 4px;
-  border: 1px solid #334155;
-  background: #1e293b;
-  color: var(--text);
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
 }
 
-.button {
+.card {
+  background: white;
   width: 100%;
-  padding: 0.75rem;
-  border: none;
+  max-width: 420px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  color: var(--muted);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
   border-radius: 6px;
-  background: var(--gov-blue);
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--blue);
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  background: var(--blue);
   color: white;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease;
+  margin-top: 10px;
 }
 
-.button:hover {
-  background: #003b8f;
+.btn-primary:hover {
+  background: var(--light-blue);
 }
 
-footer {
-  margin-top: 2rem;
+.alt-login {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.85rem;
+}
+
+.alt-login button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: white;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
   font-size: 0.75rem;
   color: var(--muted);
-  text-align: center;
+  border-top: 1px solid var(--border);
+  background: white;
 }
 </style>
 </head>
 
 <body>
 
-<div class="banner">SBU//SP-EXPT//PROPIN//AIUO</div>
-
-<div class="login-container">
-  <h1>Login</h1>
-  <form id="loginForm">
-    <div class="input-group">
-      <label for="username">Username</label>
-      <input type="text" id="username" required>
-    </div>
-    <div class="input-group">
-      <label for="password">Password</label>
-      <input type="password" id="password" required>
-    </div>
-    <button type="submit" class="button">Login</button>
-  </form>
+<div class="top-bar">
+  <div>U.S. Government Information System</div>
+  <span>Unauthorized use is prohibited and subject to monitoring.</span>
 </div>
 
+<div class="header">
+  <h1>Secure Access Portal</h1>
+  <p>Identity, Credential, and Access Management (ICAM)</p>
+</div>
 
+<div class="container">
+  <div class="card">
+    <h2>Sign In</h2>
+
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="username">Username or Email</label>
+        <input type="text" id="username" required />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required />
+      </div>
+
+      <div class="form-group">
+        <label for="mfa">One-Time Code (MFA)</label>
+        <input type="text" id="mfa" placeholder="Enter 6-digit code" />
+      </div>
+
+      <button type="submit" class="btn-primary">Sign In</button>
+    </form>
+
+    <div class="alt-login">
+      <div>Or</div>
+      <button type="button">Sign in with PIV/CAC</button>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">
+  This is a U.S. Government system intended for authorized use only. All activity may be monitored, recorded, and subject to audit.
+</div>
 
 <script>
 document.getElementById('loginForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  window.location.href = "portal.htm"; // 
+  window.location.href = "portal.htm";
 });
 </script>
 
